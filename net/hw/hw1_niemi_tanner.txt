@@ -1,0 +1,58 @@
+﻿Josh Tanner & Rebar Niemi
+SOS 2013
+Networking HW1                  
+
+
+
+
+Review
+
+
+13. a. Two users can be supported; each user uses 1mbps, or half the channel, regardless of whether or not they are transmitting.
+b. Because two users transmitting at 1 mbps cannot exceed the 2 mbps maximum on the link in order to cause queuing. If more than two users transmit, the total amount of data coming in will be 3 mbps which is more than the maximum of the link, and as such some of it will have to be queued. This will cause delays.
+c. 0.2 (given)
+d. All three users transmitting simultaneously 0.2*0.2*0.2 = 0.008. The queue grows 0.8% of the time.
+14. The benefit of peering is that both networks involved can avoid upstream intermediaries that might charge them for the data moved, which reduces cost. IXPs make money by selling the convenience of and infrastructure for multiple ISPs peering together.
+18. It takes 10 milliseconds to propagate. More generally, it takes distance in meters over propagation speed in meters/seconds to propagate. Given that we are discussing JUST propagation, this does not depend on packet length or transmission rate, as those are relevant only to transmission speed.
+19. a. 500kbps
+b. 64 seconds
+c. New throughput is 100kbps, and new transfer time is 320 seconds.
+
+
+Problems
+4. a. 4x4, for 16                          
+b. There are 4 circuits going a->b->c and 4 circuits going a->d->c, making for a total of 8 possible simultaneous connections.
+c.  This can be accomplished by making two connections from A to C through B, and two connections from A to C through D, and two connections from B to D through C, and two connections from B to D through A.
+
+
+5. a. It will take 94 minutes of end-to-end delay for the caravan to travel 150 km, 1.5 hours at 100 km/h + 2(10*12 seconds).
+b. Same time to travel as above, 1.5 hours between toll booths + 2(8*12 seconds) for a total end-to-end delay of 93.2 minutes. Also possible to get this by subtracting 48 seconds from the original problem, since the only difference is how long it takes for the cars to get through the toll booths.
+
+
+6. a. Propagation delay = m / s
+b. Transmission time = L / R
+c. With a single link and no processing or queuing delays, the end-to-end delay should be
+ (m / s) + (L / R ), or propagation delay plus transmission time.
+d. The last bit is in the link.
+e. The first bit is in the link.
+f. The first bit has reached the receiving host B.
+g. m = 5357142.857
+
+
+10. 2(Dproc) + (d1/s1 + L/R1) + (d2/s2 + L/R2) + (d3/s3 + L/R3)
+
+
+2(0.003) + (5000000/(2.5*10^8) + 12000/2000000) + (4000000/(2.5*10^8) + 12000/2000000) + (1000000/(2.5*10^8) + 12000/2000000)
+
+
+0.006 + 0.02 + 0.006  + 0.022 + 0.01 = 0.064 seconds or 64 msec
+
+
+11.  (10000000/(2.5*10^8) + L/R)  = 0.04 + L / R
+
+
+12.  4.5(12000/2000000) = 0.027 seconds, or 27 milliseconds. More generally ((L - x)/R) + n(L/R)
+
+
+13. a. (n - 1)(L / R) / (n)
+b. It takes n(L/R) time to fully process n packets. It takes  n(L/R) = (Ln/R) seconds to empty, meaning that the queue will be empty as the packet burst arrives, producing an identical average. This means that the average is (n-1)(L/R) / (n). We looked at trying to construct a summation involving the data left in the queue after each packet burst (which would definitely change our answer to the average queuing delay), but we couldn’t figure out the exact formula and were unsure as to how to proceed from here.

@@ -1,0 +1,37 @@
+﻿Josh Tanner & Rebar Niemi
+SOS 2013
+Networking Lab 2
+
+
+1. Both my browser and the server are running 1.1
+2. English (en) and U.S. english (en -US).
+3. My computer is 10.20.78.90, and the server is 128.119.245.11.
+4. 200
+5. Last modified today Mon 07 October 2013, 19:45:01 GMT. Basically, last modified right before it was served.
+6. 128.
+7. I don’t see any headers not displayed in the packet listing window.
+8. No.
+9.  Yes, the packet contained the relevant HTML.
+10. Yes, and the information there is a date to compare against (whether it’s been modified since the given date). The date is the date of the last request to the server, when we saw the file the first time.
+11. The code is 304 Not Modified, meaning the file hasn’t changed so there’s no reason to send it. Accordingly, the server didn’t serve the HTML file.
+12. We sent one GET request, #11. 
+13. Packet #13, the first packet of 4 returned by the server.
+14. The status code and phrase is 200 OK. 
+15. 4
+16. 3 GETs were sent, one to 128.119.245.12, one to 128.119.240.90, and one to 165.193.140.14.
+17. It looks like they’re loaded synchronously; both the get requests go out before either image is received back.
+18. 401 Authorization Required
+19. An authorization field that contains credentials (the username and password).
+
+
+Extra:
+20. Round trip time would be the time we received the response packet - the time we sent the initial packet. 
+
+
+Response time is the time at which the server received the packet (wireshark has the information for get requests you send) subtracted from the time at which it sent the response packet (this information is in the HTML header). Basically: sent time of response packet - received time of initial packet. HTML only provides second accuracy, though, so I don’t know how you’d go about calculating this with more than a second of accuracy. Also called processing time.
+
+
+R21. The maximum emission rate is 500 packet/s, the minimum transmission rate is 350 packet/s. This means the traffic intensity is 500L/350.  It took 66 msec for the queue to fill and packet loss to occur. The second time through it took 72 msec to drop a packet. The values are different because arrival process is random, that means that both runs had slightly different packet bursts.
+
+
+P32. The delays in this applet seemed to correspond to the previous problem in the book. Propagation delay effects and adds to overall end-to-end delay equally whether you are packet switching or message switching.

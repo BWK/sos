@@ -1,0 +1,42 @@
+Rebar Niemi & Josh Tanner
+SOS 2013
+Networking Lab1
+
+
+1. The ethernet header comes first
+
+2. Four packets: Two http gets and two return packets
+
+3. MDNS, UDP, BROWSER, SSH, SSDP, NBNS, HTTP, TCP, DB-LSP-DISC, LLMNR, TLSv1.1, and CUPS.
+
+Additional questions from wireshark tutorial:
+
+1. UDP, SSH, HTTP
+
+2. 0.076829 seconds, or 76.829 milliseconds.
+
+3. The gaia.cs.umass.edu address is 128.119.245.12, our computer's was 10.20.78.69
+
+4. 
+GET---
+ 
+.     Time           Source                Destination           Protocol Length Info
+  2734 178.322562000  10.20.78.69           128.119.245.12        HTTP     510    GET /wireshark-labs/INTRO-wireshark-file1.html HTTP/1.1 
+
+Frame 2734: 510 bytes on wire (4080 bits), 510 bytes captured (4080 bits) on interface 0
+Ethernet II, Src: GemtekTe_97:09:8d (ac:81:12:97:09:8d), Dst: Procurve_49:af:00 (00:1b:3f:49:af:00)
+Internet Protocol Version 4, Src: 10.20.78.69 (10.20.78.69), Dst: 128.119.245.12 (128.119.245.12)
+Transmission Control Protocol, Src Port: 45603 (45603), Dst Port: http (80), Seq: 1, Ack: 1, Len: 444
+Hypertext Transfer Protocol
+
+OK---
+
+No.     Time           Source                Destination           Protocol Length Info
+  2739 178.399391000  128.119.245.12        10.20.78.69           HTTP     446    HTTP/1.1 200 OK  (text/html)
+
+Frame 2739: 446 bytes on wire (3568 bits), 446 bytes captured (3568 bits) on interface 0
+Ethernet II, Src: Procurve_49:af:00 (00:1b:3f:49:af:00), Dst: GemtekTe_97:09:8d (ac:81:12:97:09:8d)
+Internet Protocol Version 4, Src: 128.119.245.12 (128.119.245.12), Dst: 10.20.78.69 (10.20.78.69)
+Transmission Control Protocol, Src Port: http (80), Dst Port: 45603 (45603), Seq: 1, Ack: 445, Len: 380
+Hypertext Transfer Protocol
+Line-based text data: text/html

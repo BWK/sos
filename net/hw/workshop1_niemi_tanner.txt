@@ -1,0 +1,20 @@
+﻿Josh Tanner & Rebar Niemi
+SOS 2013
+Networking Workshop 1
+
+
+
+
+1. Trick question: hosts and end systems are the same thing. An end system is any computing device (that is part of a computer network) that the end user interacts with. A host is an end system that is connected to the internet, or runs applications. To quote page 10, “Throughout this book we will use the terms hosts and end systems interchangeably; that is, host = end system.“ Some examples of end systems include smart phones, personal computers, and all servers. Web servers are end systems because they host applications, communicate across links and switches with other end systems, and connect to the internet.
+
+
+4. Laptop (home and wide-area wifi), smart phone (wide-area wifi), server (enterprise access), base station (home and enterprise access), host (home access), cell phone tower (wide-area wifi).
+
+
+5. Transmission rate is shared among users in an HFC system. Collisions are possible in a downstream channel but are mediated by distributed access protocols, which means that the result of a collision is a loss in actual downstream rate per user proportional to the number of users attempting to utilize the downstream channel.
+
+
+7. It depends on the network switches, but typically very fast. 100mbps, 1gbs, or even 10gbps. 
+
+
+11. L/R1 + L/R2

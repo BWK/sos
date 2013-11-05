@@ -1,4 +1,5 @@
-
+#ifndef scheduler_h
+#define scheduler_h
 #include <vector>
 #include <string>
 using namespace std;
@@ -6,6 +7,10 @@ using namespace std;
 
 class scheduler {
   private:
+
+    //these are my job queues
+    list<job> wait_queue, run_queue;
+
     //number of available processors
     int free_procs;
 
@@ -21,7 +26,7 @@ class scheduler {
 
     //find shortest could return a job or the node position of a job
     //shortest means smallest number of ticks
-    job find_del_short();
+    job find_del_short(job**);
 
     //check available will be called by insert_job
     int check_available ();
@@ -33,5 +38,8 @@ class scheduler {
     void release_procs()
     void tick ();
   public:  
+
     void start ();
+    scheduler(
 };
+#endif
